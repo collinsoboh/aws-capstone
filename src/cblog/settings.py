@@ -83,8 +83,8 @@ def get_ssm_parameters():
     ssm = boto3.client('ssm', region_name='us-east-1')
 
     # AWS SSM Parametr define
-    username_param = ssm.get_parameter(Name="/kodal/capstone/username", WithDecryption=True)
-    password_param = ssm.get_parameter(Name="/kodal/capstone/password", WithDecryption=True)
+    username_param = ssm.get_parameter(Name="/oboh/capstone/username", WithDecryption=True)
+    password_param = ssm.get_parameter(Name="/oboh/capstone/password", WithDecryption=True)
 
 
     # Parametre retrieve
@@ -102,7 +102,7 @@ DATABASES = {
         'NAME': 'clarusway',
         'USER': db_username,
         'PASSWORD': db_password,
-        'HOST': 'kodal-aws-capstone-rds.cbanmzptkrzf.us-east-1.rds.amazonaws.com',
+        'HOST': 'oboh-rds-latest.crwe6220e4as.us-east-1.rds.amazonaws.com',
         'PORT': '3306',
     }
 }
@@ -156,7 +156,7 @@ LOGIN_REDIRECT_URL = "blog:list"
 LOGIN_URL = "login"
 
 
-AWS_STORAGE_BUCKET_NAME = 'kodal-awscapstone-blog' # please enter your s3 bucket name
+AWS_STORAGE_BUCKET_NAME = 'oboh-awscapstones-blog' # please enter your s3 bucket name
 AWS_S3_CUSTOM_DOMAIN = '%s.s3.amazonaws.com' % AWS_STORAGE_BUCKET_NAME
 AWS_S3_REGION_NAME = "us-east-1" # please enter your s3 region 
 AWS_DEFAULT_ACL = 'public-read'
